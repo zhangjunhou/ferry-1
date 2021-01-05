@@ -9,4 +9,4 @@ ENV GOPROXY="https://goproxy.cn"
 RUN go mod download
 RUN go build -o ferry .
 
-EXPOSE 8002
+EXPOSE 8012
