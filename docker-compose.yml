@@ -34,9 +34,9 @@ services:
       - 26379:26379
 
   ferry:
-    hostname: ferry
+    hostname: etc_ferry
     image: registry.cn-beijing.aliyuncs.com/lanyulei/ferry:v1.0.0-2
-    container_name: ferry
+    container_name: etc_ferry
     depends_on:
       - db
       - redis
@@ -56,11 +56,11 @@ services:
     command: ./ferry server -c=/opt/ferry/config/settings.yml
 
   ferry_web:
-    hostname: ferry_web
-    container_name: ferry_web
+    hostname: etc_ferry_web
+    container_name: etc_ferry_web
     image: registry.cn-beijing.aliyuncs.com/lanyulei/ferry_web:v1.0.0-1
     links:
-      - ferry:ferry_host
+      - ferry:etc_ferry_host
     ports:
       - 8011:8011
     volumes:
