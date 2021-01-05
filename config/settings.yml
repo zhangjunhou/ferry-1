@@ -7,12 +7,12 @@ settings:
     ishttps: false
     mode: dev
     name: ferry
-    port: "8002"
+    port: "8012"
     readtimeout: 1
     writertimeout: 2
   database:
     dbtype: mysql
-    host: ferry_mysql
+    host: etc_ferry_mysql
     name: ferry
     password: 123456
     port: 23306
@@ -55,7 +55,7 @@ settings:
   public:
     islocation: 0
   redis:
-    url: redis://ferry_redis:26379
+    url: redis://etc_ferry_redis:26379
   ssl:
     key: keystring
     pem: temp/pem.pem

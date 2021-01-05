@@ -2,7 +2,7 @@ version: "3"
 services:
   db:
     hostname: mysql
-    container_name: ferry_mysql
+    container_name: etc_ferry_mysql
     image: mysql:5.7.31
     restart: always
     environment:
@@ -22,7 +22,7 @@ services:
   redis:
     hostname: redis
     image: redis:5.0.4
-    container_name: ferry_redis
+    container_name: etc_ferry_redis
     restart: always
     command: redis-server /etc/redis.conf # 启动redis命令
     environment:
@@ -41,8 +41,8 @@ services:
       - db
       - redis
     links:
-      - db:ferry_mysql
-      - redis:ferry_redis
+      - db:etc_ferry_mysql
+      - redis:etc_ferry_redis
     ports:
       - 8012:8012
     volumes:
